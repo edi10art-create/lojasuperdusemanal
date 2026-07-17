@@ -300,22 +300,19 @@ img {
 /* --- SEÇÃO APARECIDO --- */
 .aparecido {
     position: relative;
-    width: min(600px, 95vw);
-    height: min(800px, 120vw);
+    width: min(600px, 90vw);
+    height: min(600px, 90vw);
     margin: 0 auto;
     overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .aparecido img {
     position: absolute;
-    width: 95%;
-    height: 95%;
+    inset: 0;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
-    transform: scale(1.2);
-    transform-origin: center center;
+    object-position: center center;
     opacity: 0;
     animation: trocarAparecido 6s infinite;
 }
@@ -331,18 +328,27 @@ img {
 }
 
 
-/* Celular */
-@media (max-width: 600px) {
+@keyframes trocarAparecido {
 
-    .aparecido {
-        width: 95vw;
-        height: 120vw;
+    0% {
+        opacity: 0;
     }
 
-    .aparecido img {
-        transform: scale(1.1);
+    10% {
+        opacity: 1;
     }
 
+    40% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 
