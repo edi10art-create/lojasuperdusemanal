@@ -300,20 +300,21 @@ img {
 /* --- SEÇÃO APARECIDO --- */
 .aparecido {
     position: relative;
-    width: min(400px, 90vw);
-    height: min(500px, 110vw);
+    width: min(600px, 95vw);
+    height: min(700px, 120vw);
     margin: 0 auto;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .aparecido img {
     position: absolute;
-    left: 0;
-    top: 50%;
     width: 100%;
     height: 100%;
     object-fit: contain;
-    transform: translateY(-50%) scale(1.5) translateY(15%);
+    transform: scale(1.2);
     transform-origin: center center;
     opacity: 0;
     animation: trocarAparecido 6s infinite;
@@ -330,18 +331,43 @@ img {
 }
 
 
-/* Ajuste para celulares */
+/* Celular */
 @media (max-width: 600px) {
 
     .aparecido {
-        width: 90vw;
-        height: 110vw;
+        width: 95vw;
+        height: 120vw;
     }
 
     .aparecido img {
-        transform: scale(1.0) translateY(5%);
+        transform: scale(1.1);
     }
 
+}
+
+
+/* Animação */
+@keyframes trocarAparecido {
+
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 
